@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Custom Dropdown</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Custom Dropdown</h1>
+
+      <p class="lead">A small demo of a custom dropdown. Click the control to open, choose an item to select it and close the list.</p>
+
+      <div class="container">
+        <div class="dropdown" id="my-dropdown">
+          <button class="dropdown__button" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="dropdown__label">Select an Item</span>
+            <span class="dropdown__arrow" aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="dropdown__list" role="listbox" tabindex="-1">
+            <li class="dropdown__item" role="option" data-value="1" tabindex="0">First Item</li>
+            <li class="dropdown__item" role="option" data-value="2" tabindex="0">Second Item</li>
+            <li class="dropdown__item" role="option" data-value="3" tabindex="0">Third Item</li>
+            <li class="dropdown__item" role="option" data-value="4" tabindex="0">Fourth Item</li>
+            <li class="dropdown__item" role="option" data-value="5" tabindex="0">Fifth Item</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

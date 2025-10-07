@@ -1,0 +1,82 @@
+:root{
+  --bg: #fff;
+  --border: #222;
+  --muted: #666;
+  --accent: #111;
+  --radius: 14px;
+}
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{height:100%}
+body{font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif; background:#f6f6f8; color:var(--accent); margin:0; padding:32px}
+.page{max-width:680px;margin:0 auto}
+h1{font-size:20px;margin-bottom:8px}
+.lead{color:var(--muted);margin-top:0}
+.container{margin-top:22px}
+
+.dropdown{width:100%;max-width:480px}
+.dropdown__button{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:20px 18px;
+  background:var(--bg);
+  border:3px solid var(--border);
+  border-radius:var(--radius);
+  font-size:24px;
+  cursor:pointer;
+}
+.dropdown__button:focus{outline:3px solid rgba(0,0,0,0.06);}
+.dropdown__label{flex:1;text-align:left}
+.dropdown__arrow{font-size:18px;color:var(--muted)}
+
+.dropdown__list{
+  margin:10px 0 0 0;
+  padding:4px 0;
+  list-style:none;
+  border:3px solid var(--border);
+  border-radius:var(--radius);
+  background:var(--bg);
+  max-height:0; /* collapsed */
+  overflow:hidden;
+  transition: max-height 240ms ease, box-shadow 180ms ease, opacity 160ms ease;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  opacity:0;
+}
+.dropdown.open .dropdown__list{
+  max-height:420px; /* large enough for items */
+  opacity:1;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.dropdown__item{
+  padding:18px 22px;
+  font-size:20px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+.dropdown__item:first-child{border-top:0}
+.dropdown__item:focus{outline:2px solid rgba(0,0,0,0.06)}
+.dropdown__item:hover{background:rgba(0,0,0,0.02)}
+
+.dropdown__item.selected{
+  background:linear-gradient(0deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+}
+.check{
+  display:inline-block;width:32px;height:32px;border-radius:999px;background:#000;color:#fff;align-items:center;justify-content:center;display:none
+}
+.dropdown__item.selected .check{display:inline-flex}
+
+@media (max-width:520px){
+  .dropdown__button{font-size:20px;padding:16px}
+  .dropdown__item{font-size:18px;padding:16px}
+}
